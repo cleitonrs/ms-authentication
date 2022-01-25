@@ -1,1 +1,11 @@
-console.log("Olá Mundo!")
+import express, {Request, Response, NextFunction } from 'express'
+
+const app = express()
+
+app.get('/status', (req: Request, res: Response, next: NextFunction) => {
+  res.status(200).send({ foo: 'Deu bom'})
+})
+
+app.listen(3000, () => {
+  console.log("Server running on Port: 3000")
+})
